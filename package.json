@@ -1,7 +1,7 @@
 {
   "name": "sjson",
   "version": "0.1.0", 
-  "description": "description",
+  "description": "Squish and unsquish JSON strings",
    "main": "index.js",
   "scripts": {
     "test": "mocha -R list test/*.js",
