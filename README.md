@@ -13,20 +13,31 @@ npm install sjson
 ```
 var SJSON = require('sjson');
 
-var data = {first:"joe", last:"smith", age:27};
+var data  = {first:"joe", last:"smith", age:27};
 var json  = JSON.stringify(data);
 var sjson = SJSON.squish(json);
-var json2 = SJSON.parse(sjson);
+var json2 = SJSON.unsquish(sjson);
 var data2 = JSON.parse(json2);
 
-console.log(data);   // {"first": "joe", "last": "smith", "age": 27}
-console.log(json);   // {"first":"joe","last":"smith","age":27}
-console.log(sjson);  // {first:"joe",last:"smith",age:27}
-console.log(json2);  // {"first":"joe","last":"smith","age":27}
-console.log(data2);  // {"first": "joe", "last": "smith", "age": 27}
+console.log(data);  // {"first": "joe", "last": "smith", "age": 27}
+console.log(json);  // {"first":"joe","last":"smith","age":27}
+console.log(sjson); // {first:"joe",last:"smith",age:27}
+console.log(json2); // {"first":"joe","last":"smith","age":27}
+console.log(data2); // {"first": "joe", "last": "smith", "age": 27}
 ```
 
 While it may not look like much, every byte helps when you scale :-) In this example we get at 15% headstart on any addition compression we may want to do.
+
+## Directly operate with objects
+
+```
+sjson = SJSON.squishify(data); // do both JSON.stringify and SJSON.squish
+data2 = SJSON.parse(sjson);    // do both SJSON.unsquish and JSON.parse
+
+console.log(data);  // {"first": "joe", "last": "smith", "age": 27}
+console.log(sjson); // {first:"joe",last:"smith",age:27}
+console.log(data2); // {"first": "joe", "last": "smith", "age": 27}
+```
 
 ## Credits
 

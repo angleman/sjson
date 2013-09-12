@@ -1,18 +1,31 @@
 // adapted from: http://stackoverflow.com/questions/11233498/json-stringify-without-quotes-on-properties
-function sjsonSmallify(json) {
+function squish(json) {
     var sjson = json.replace(/\"([^(\")"]+)\":/g,"$1:");
     return sjson;
 }
 
 
 
-function sjsonParse(sjson) {
+function unsquish(sjson) {
     var json = sjson.replace(/(\{|,)\s*(.+?)\s*:/g, '$1"$2":');
     return json;
 }
 
 
+function squishify(obj) {
+	var json = JSON.stringify(obj);
+	return squish(json);
+}
 
-module.exports.squish = sjsonSmallify;
 
-module.exports.parse  = sjsonParse;
+function parse(sjson) {
+	var json = unsquish(sjson);
+	return JSON.parse(json);
+}
+
+
+module.exports.squish    = squish;
+module.exports.unsquish  = unsquish;
+
+module.exports.squishify = squishify;
+module.exports.parse     = parse;

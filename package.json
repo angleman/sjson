@@ -1,6 +1,6 @@
 {
   "name": "sjson",
-  "version": "0.1.4", 
+  "version": "0.2.0", 
   "description": "Squishable JSON strings. To assist with JSON compression by stripping variable name double quotes and yet the squished strings can still be parsed by javascript.",
    "main": "index.js",
   "scripts": {
