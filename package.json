@@ -12,6 +12,11 @@
     "url": "https://github.com/angleman/sjson.git"
   },
   "keywords": [
+    "json",
+    "compression",
+    "compress",
+    "squish",
+    "parse"
   ],
   "author": "angleman",
   "license": "MIT",
