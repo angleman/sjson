@@ -10,7 +10,7 @@ npm install sjson
 
 ## Usage
 
-```
+```javascript
 var SJSON = require('sjson');
 
 var data  = {first:"joe", last:"smith", age:27};
@@ -30,13 +30,20 @@ While it may not look like much, every byte helps when you scale :-) In this exa
 
 ## Directly operate with objects
 
-```
+```javascript
 sjson = SJSON.squishify(data); // do both JSON.stringify and SJSON.squish
 data2 = SJSON.parse(sjson);    // do both SJSON.unsquish and JSON.parse
 
 console.log(data);  // {"first": "joe", "last": "smith", "age": 27}
 console.log(sjson); // {first:"joe",last:"smith",age:27}
 console.log(data2); // {"first": "joe", "last": "smith", "age": 27}
+```
+
+## Handler for browser callbacks
+
+```javascript
+out = SJSON.callbackify(data, 'callme'); // wrapped SJSON.squishify
+console.log(out);                        // callme({"first": "joe", "last": "smith", "age": 27});
 ```
 
 ## Credits
