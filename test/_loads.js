@@ -17,8 +17,8 @@ describe('package', function() {
 			sjson.should.equal(squished);
         });
 
-    	it('parse back to: ' + json, function() {
-			json2 = SJSON.parse(sjson);
+    	it('unsquish back to: ' + json, function() {
+			json2 = SJSON.unsquish(sjson);
 			should.exist(json2);
 			json2.should.equal(json);
         });
