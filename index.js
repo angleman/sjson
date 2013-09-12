@@ -26,7 +26,8 @@ function parse(sjson) {
 
 function callbackify(obj, callback_name) {
 	callback_name = callback_name || 'callback';
-	return = callback + '(' + squishify(obj) + ');'
+	var result = callback_name + '(' + squishify(obj) + ');'
+	return result;
 }
 
 
@@ -34,4 +35,4 @@ module.exports.squish      = squish;
 module.exports.unsquish    = unsquish;
 module.exports.squishify   = squishify;
 module.exports.parse       = parse;
-module.exports.callbackify = callbackify;
+//module.exports.callbackify = callbackify;
