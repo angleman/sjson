@@ -2,6 +2,8 @@
 
 Squishable JSON strings. To assist with JSON compression by stripping variable name double quotes and yet the squished strings can still be parsed by javascript.
 
+<!--- test comment -->
+
 ## Install
 
 ```
