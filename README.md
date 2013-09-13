@@ -5,13 +5,13 @@ Squishable JSON strings. To assist with JSON compression by stripping variable n
 <!--- test comment -->
 
 
-## Install
+## Install :hammer:
 
 ```
 npm install sjson
 ```
 
-## Usage
+## Usage :wrench:
 
 ```javascript
 var SJSON = require('sjson');
@@ -31,7 +31,7 @@ console.log(data2); // {"first": "joe", "last": "smith", "age": 27}
 
 While it may not look like much, every byte helps when you scale :-) In this example we get at 15% headstart on any addition compression we may want to do.
 
-## Directly operate with objects
+## Directly operate with objects :wrench:
 
 ```javascript
 sjson = SJSON.squishify(data); // do both JSON.stringify and SJSON.squish
@@ -42,16 +42,16 @@ console.log(sjson); // {first:"joe",last:"smith",age:27}
 console.log(data2); // {"first": "joe", "last": "smith", "age": 27}
 ```
 
-## Handler for browser callbacks
+## Generate browser callbacks :wrench:
 
 ```javascript
 out = SJSON.callbackify(data, 'callme'); // wrapped SJSON.squishify
 console.log(out);                        // callme({"first": "joe", "last": "smith", "age": 27});
 ```
 
-## Credits
+## Credits :busts_in_silhouette:
 
 [Derek](http://stackoverflow.com/questions/11233498/json-stringify-without-quotes-on-properties) and [Bergi](http://stackoverflow.com/questions/11233498/json-stringify-without-quotes-on-properties)
 
-## License: MIT
+## License: MIT :unlock:
 
